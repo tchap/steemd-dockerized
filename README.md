@@ -29,3 +29,8 @@ otherwise you can use `127.0.0.0` just fine.
 2. Configure - Copy `config.ini.example` to `config.ini` and modify as needed.
 2. Run - `docker run -d -p $HOST:8090:8090 --volumes-from steemdata --name steemd steemd:dockerized`
 3. You can see what is happening now by running `docker logs -f steemd`.
+
+## Upvote
+
+Feel free to [upvote](https://steemit.com/steemd-docker/@void/dockerfile-for-steemd-tuned-for-performance)
+the effort on Steemit.
