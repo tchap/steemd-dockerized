@@ -1,0 +1,84 @@
+# Endpoint for P2P node to listen on
+# p2p-endpoint = 
+
+# P2P nodes to connect to on startup (may specify multiple times)
+# seed-node = 
+seed-node = 52.4.250.181:39705
+seed-node = 104.199.157.70:2001
+seed-node = 104.236.82.250:2001
+seed-node = 212.47.249.84:40696
+seed-node = 162.213.199.171:34191
+seed-node = steem.kushed.com:2001
+seed-node = steemd.pharesim.me:2001
+seed-node = seed.steemed.net:2001
+seed-node = steem.clawmap.com:2001
+seed-node = seed.steemnodes.com:2001
+seed-node = seed.steemwitness.com:2001
+seed-node = steem-seed1.abit-more.com:2001
+
+# Pairs of [BLOCK_NUM,BLOCK_ID] that should be enforced as checkpoints.
+# checkpoint = 
+checkpoint = [934586, "000e42badc03fa6962f6806ea393fdccb2c5b9d2"]
+checkpoint = [934959, "000e442f1393923c9493c724d52c171912cbc39d"]
+checkpoint = [953528, "000e8cb85cde981aac6356b25a1a0eff2fc9de23"]
+checkpoint = [1782161, "001b3191f02df6e842b701b22b0ffacdc3c1d33e"]
+
+# Endpoint for websocket RPC to listen on
+rpc-endpoint = 0.0.0.0:8090
+
+# Endpoint for TLS websocket RPC to listen on
+# rpc-tls-endpoint = 
+
+# The TLS certificate file for this server
+# server-pem = 
+
+# Password for this certificate
+# server-pem-password = 
+
+# Block signing key to use for init witnesses, overrides genesis file
+# dbg-init-key = 
+
+# JSON file specifying API permissions
+# api-access = 
+
+# Enable block production, even if the chain is stale.
+enable-stale-production = false
+
+# Percent of witnesses (0-99) that must be participating in order to produce blocks
+required-participation = false
+
+# name of witness controlled by this node (e.g. initwitness )
+# witness = 
+
+# name of miner and its private key (e.g. ["account","WIF PRIVATE KEY"] )
+# miner = 
+
+# Number of threads to use for proof of work mining
+# mining-threads = 1
+
+# WIF PRIVATE KEY to be used by one or more witnesses or miners
+# private-key = 
+
+# Defines a range of accounts to track as a json pair ["from","to"] [from,to)
+# track-account-range = 
+
+# declare an appender named "stderr" that writes messages to the console
+[log.console_appender.stderr]
+stream=std_error
+
+# declare an appender named "p2p" that writes messages to p2p.log
+[log.file_appender.p2p]
+filename=logs/p2p/p2p.log
+# filename can be absolute or relative to this config file
+
+# route any messages logged to the default logger to the "stderr" logger we
+# declared above, if they are info level are higher
+[logger.default]
+level=info
+appenders=stderr
+
+# route messages sent to the "p2p" logger to the p2p appender declared above
+[logger.p2p]
+level=debug
+appenders=p2p
+
