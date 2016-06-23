@@ -2,12 +2,12 @@ FROM ubuntu:16.04
 
 # Register arguments
 ARG cname_flags=-DENABLE_CONTENT_PATCHING=OFF
-ARG steemd_version=0.4.3
+ARG steemd_version=0.5.0
 ARG rpc_port=8090
 
 # Install necessary packages
 RUN apt-get update
-RUN apt-get install -qy build-essential git libssl-dev m4 yasm autogen automake libtool doxygen python-dev autotools-dev libicu-dev libbz2-dev cmake g++ wget pkg-config libgmp-dev libboost-all-dev
+RUN apt-get install -qy build-essential git libssl-dev m4 yasm autogen automake libtool doxygen python3 python-dev autotools-dev libicu-dev libbz2-dev cmake g++ wget pkg-config libgmp-dev libboost-all-dev
 
 # Clone steem repository.
 WORKDIR /usr/local/steem
